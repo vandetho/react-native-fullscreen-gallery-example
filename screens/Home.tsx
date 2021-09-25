@@ -9,6 +9,9 @@ const MENU: MenuItem[] = [
     { name: 'Vertical Thumbnail', screen: 'VerticalThumbnail' },
     { name: 'Horizontal Dot', screen: 'HorizontalDot' },
     { name: 'Vertical Dot', screen: 'VerticalDot' },
+    { name: 'Rotary Dot', screen: 'RotaryDot' },
+    { name: 'Fade Dot', screen: 'FadeDot' },
+    { name: 'Liquid Dot', screen: 'LiquidDot' },
 ];
 
 interface ListItemProps {
