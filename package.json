@@ -16,14 +16,15 @@
         "ios": "expo start --ios"
     },
     "dependencies": {
-        "@react-navigation/stack": "^6.0.7",
-        "@react-navigation/native": "^6.0.2",
-        "expo": "~42.0.1",
-        "expo-status-bar": "~1.0.4",
+        "@react-native-picker/picker": "^2.1.0",
+        "@react-navigation/stack": "^6.0.9",
+        "@react-navigation/native": "^6.0.4",
+        "expo": "^42.0.4",
+        "expo-status-bar": "^1.0.4",
         "react": "16.13.1",
         "react-dom": "16.13.1",
         "react-native-gesture-handler": "^1.10.3",
-        "react-native-fullscreen-gallery": "^1.1.1",
+        "react-native-fullscreen-gallery": "^1.1.5",
         "react-native-collapsible": "^1.6.0",
         "react-native": "0.63.4",
         "react-native-web": "~0.13.12"

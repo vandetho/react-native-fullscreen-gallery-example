@@ -13,7 +13,7 @@ export default function App() {
     }>({
         horizontal: true,
         indicatorMode: 'dot',
-        dotColor: '#555555',
+        dotColor: '#08CDE7',
         dotType: 'liquid',
         withZoom: false,
     });

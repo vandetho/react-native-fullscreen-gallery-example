@@ -20,7 +20,7 @@ export const SettingContext = React.createContext<{
     setting: {
         horizontal: true,
         indicatorMode: 'dot',
-        dotColor: '#555555',
+        dotColor: '#000000',
         dotType: 'liquid',
         withZoom: false,
     },
