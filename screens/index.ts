@@ -4,5 +4,7 @@ export { default as HorizontalThumbnailScreen } from './HorizontalThumbnail';
 export { default as RotaryDotScreen } from './RotaryDot';
 export { default as FadeDotScreen } from './FadeDot';
 export { default as LiquidDotScreen } from './LiquidDot';
+export { default as LiquidZoomDotScreen } from './LiquidZoomDot';
+export { default as ZoomDotScreen } from './ZoomDot';
 export { default as VerticalDotScreen } from './VerticalDot';
 export { default as VerticalThumbnailScreen } from './VerticalThumbnail';
