@@ -8,6 +8,7 @@ export default function App() {
         horizontal: true,
         slideAnimationType: 'slide',
         indicatorMode: 'dot',
+        dotSize: 10,
         dotColor: '#08CDE7',
         dotType: 'liquid',
         withZoom: false,

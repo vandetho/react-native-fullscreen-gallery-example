@@ -9,6 +9,7 @@ export const SettingContext = React.createContext<{
         horizontal: true,
         slideAnimationType: 'slide',
         indicatorMode: 'dot',
+        dotSize: 10,
         dotColor: '#000000',
         dotType: 'liquid',
         withZoom: false,

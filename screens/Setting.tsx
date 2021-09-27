@@ -22,7 +22,6 @@ const SlideAnimation = {
     slide: { value: 'slide', name: 'Slide' },
     fade: { value: 'fade', name: 'Fade' },
     zoom: { value: 'zoom', name: 'Zoom' },
-    blur: { value: 'blur', name: 'Blur' },
     zoomAndFade: { value: 'zoomAndFade', name: 'Zoom And Fade' },
 };
 
@@ -43,6 +42,8 @@ interface SettingProps {}
 
 const Setting: React.FunctionComponent<SettingProps> = () => {
     const navigation = useNavigation();
+    const dotColorInput = React.useRef<TextInput>(null);
+    const dotSizeInput = React.useRef<TextInput>(null);
     const { visible, onToggle } = useVisible({ initial: true });
     const { visible: visibleSlideType, onToggle: onToggleSlideType } = useVisible({ initial: true });
     const { visible: visibleAnimation, onToggle: onToggleAnimation } = useVisible({ initial: true });
@@ -66,6 +67,10 @@ const Setting: React.FunctionComponent<SettingProps> = () => {
 
     const onChangeHorizontal = React.useCallback((value: boolean) => {
         setState((prevState) => ({ ...prevState, horizontal: value }));
+    }, []);
+
+    const onSizeChange = React.useCallback((value: string) => {
+        setState((prevState) => ({ ...prevState, dotSize: Number(value) }));
     }, []);
 
     const onColorChange = React.useCallback((value: string) => {
@@ -144,10 +149,25 @@ const Setting: React.FunctionComponent<SettingProps> = () => {
         return (
             <React.Fragment>
                 <Collapsible collapsed={state.indicatorMode !== 'dot'}>
-                    <View style={styles.row}>
-                        <Text>Dot Color</Text>
-                        <TextInput value={state.dotColor} onChangeText={onColorChange} />
-                    </View>
+                    <TouchableWithoutFeedback onPress={() => dotSizeInput.current && dotSizeInput.current.focus()}>
+                        <View style={styles.row}>
+                            <Text>Dot Size</Text>
+                            <TextInput
+                                value={String(state.dotSize)}
+                                keyboardType="numeric"
+                                onChangeText={onSizeChange}
+                                ref={dotSizeInput}
+                            />
+                        </View>
+                    </TouchableWithoutFeedback>
+                </Collapsible>
+                <Collapsible collapsed={state.indicatorMode !== 'dot'}>
+                    <TouchableWithoutFeedback onPress={() => dotColorInput.current && dotColorInput.current.focus()}>
+                        <View style={styles.row}>
+                            <Text>Dot Color</Text>
+                            <TextInput value={state.dotColor} onChangeText={onColorChange} ref={dotColorInput} />
+                        </View>
+                    </TouchableWithoutFeedback>
                 </Collapsible>
                 <Collapsible collapsed={state.indicatorMode !== 'dot'}>
                     <TouchableWithoutFeedback onPress={onToggleAnimation}>
@@ -164,7 +184,7 @@ const Setting: React.FunctionComponent<SettingProps> = () => {
                         ))}
                     </Picker>
                 </Collapsible>
-                <Collapsible collapsed={state.dotType !== 'liquid'}>
+                <Collapsible collapsed={state.dotType !== 'liquid' || state.indicatorMode !== 'dot'}>
                     <View style={styles.row}>
                         <Text>Liquid Mode Zoom</Text>
                         <Switch value={state.withZoom} onValueChange={onChangeWithZoom} />
@@ -176,8 +196,10 @@ const Setting: React.FunctionComponent<SettingProps> = () => {
         onChangeAnimation,
         onChangeWithZoom,
         onColorChange,
+        onSizeChange,
         onToggleAnimation,
         state.dotColor,
+        state.dotSize,
         state.dotType,
         state.indicatorMode,
         state.withZoom,
