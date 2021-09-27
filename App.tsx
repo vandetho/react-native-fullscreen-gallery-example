@@ -1,30 +1,19 @@
 import React from 'react';
-import { DotType } from 'react-native-fullscreen-gallery/dist/types';
 import { AppNavigator } from './navigation';
 import { SettingContext } from './context';
+import { Setting } from './types';
 
 export default function App() {
-    const [setting, setSetting] = React.useState<{
-        horizontal: boolean;
-        indicatorMode: 'thumbnail' | 'dot';
-        dotColor: string;
-        dotType: DotType;
-        withZoom: boolean;
-    }>({
+    const [setting, setSetting] = React.useState<Setting>({
         horizontal: true,
+        slideAnimationType: 'slide',
         indicatorMode: 'dot',
         dotColor: '#08CDE7',
         dotType: 'liquid',
         withZoom: false,
     });
 
-    const updateSetting = (setting: {
-        horizontal: boolean;
-        indicatorMode: 'thumbnail' | 'dot';
-        dotColor: string;
-        dotType: DotType;
-        withZoom: boolean;
-    }) => {
+    const updateSetting = (setting: Setting) => {
         setSetting(setting);
     };
 
