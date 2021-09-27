@@ -2,6 +2,7 @@ import { DotType, SlideAnimationType } from 'react-native-fullscreen-gallery/dis
 
 export type Setting = {
     horizontal: boolean;
+    roundDot: boolean;
     slideAnimationType: SlideAnimationType;
     indicatorMode: 'thumbnail' | 'dot';
     dotColor: string;

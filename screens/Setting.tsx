@@ -69,6 +69,10 @@ const Setting: React.FunctionComponent<SettingProps> = () => {
         setState((prevState) => ({ ...prevState, horizontal: value }));
     }, []);
 
+    const onChangeRoundDot = React.useCallback((value: boolean) => {
+        setState((prevState) => ({ ...prevState, roundDot: value }));
+    }, []);
+
     const onSizeChange = React.useCallback((value: string) => {
         setState((prevState) => ({ ...prevState, dotSize: Number(value) }));
     }, []);
@@ -162,6 +166,12 @@ const Setting: React.FunctionComponent<SettingProps> = () => {
                     </TouchableWithoutFeedback>
                 </Collapsible>
                 <Collapsible collapsed={state.indicatorMode !== 'dot'}>
+                    <View style={styles.row}>
+                        <Text>Rounded Dot</Text>
+                        <Switch value={state.roundDot} onValueChange={onChangeRoundDot} />
+                    </View>
+                </Collapsible>
+                <Collapsible collapsed={state.indicatorMode !== 'dot'}>
                     <TouchableWithoutFeedback onPress={() => dotColorInput.current && dotColorInput.current.focus()}>
                         <View style={styles.row}>
                             <Text>Dot Color</Text>
@@ -194,6 +204,7 @@ const Setting: React.FunctionComponent<SettingProps> = () => {
         );
     }, [
         onChangeAnimation,
+        onChangeRoundDot,
         onChangeWithZoom,
         onColorChange,
         onSizeChange,
@@ -202,6 +213,7 @@ const Setting: React.FunctionComponent<SettingProps> = () => {
         state.dotSize,
         state.dotType,
         state.indicatorMode,
+        state.roundDot,
         state.withZoom,
         visibleAnimation,
     ]);

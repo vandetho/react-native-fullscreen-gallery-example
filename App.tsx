@@ -6,6 +6,7 @@ import { Setting } from './types';
 export default function App() {
     const [setting, setSetting] = React.useState<Setting>({
         horizontal: true,
+        roundDot: false,
         slideAnimationType: 'slide',
         indicatorMode: 'dot',
         dotSize: 10,
