@@ -22,7 +22,7 @@ const SlideAnimation = {
     slide: { value: 'slide', name: 'Slide' },
     fade: { value: 'fade', name: 'Fade' },
     zoom: { value: 'zoom', name: 'Zoom' },
-    zoomIn: { value: 'zoomIn', name: 'Zoom In' },
+    blur: { value: 'blur', name: 'Blur' },
     zoomAndFade: { value: 'zoomAndFade', name: 'Zoom And Fade' },
 };
 
