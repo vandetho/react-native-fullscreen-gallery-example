@@ -5774,10 +5774,10 @@ react-native-collapsible@^1.6.0:
   resolved "https://registry.yarnpkg.com/react-native-collapsible/-/react-native-collapsible-1.6.0.tgz#ca261ffff16914f872059bb0972e3a78c4b37f9c"
   integrity sha512-beZjdgbT9Y/Pg591Xy5XkKG20HffJiVad4n9bfcUF/f783A+tvOVXnqvbS58Lkaym93mi4jcDPMuW9Vc1t6rqg==
 
-react-native-fullscreen-gallery@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/react-native-fullscreen-gallery/-/react-native-fullscreen-gallery-1.1.5.tgz#68f8da53bbb1bf338690c74b24801ecfb6ee3abe"
-  integrity sha512-fmr5D4CcjA5IL99Gr/NvTkDKZvlnnQZxxt0Xdk2vWaimgd/V8Mxj8Ffbd/3dO3XOqCbqPUeuV6UIJVjKyx6gnw==
+react-native-fullscreen-gallery@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/react-native-fullscreen-gallery/-/react-native-fullscreen-gallery-1.1.6.tgz#f07e70af7b60e79967483bac0e0a5c81637a6008"
+  integrity sha512-DI8xk6C+BxCsHsReMISEOEl7bICzSpr8NjCRYobdFLEXC2R5hn0aP4risP42NSmvptmNIY7uXZMmp/x/dTdlPQ==
   dependencies:
     react "16.13.1"
     react-dom "16.13.1"
